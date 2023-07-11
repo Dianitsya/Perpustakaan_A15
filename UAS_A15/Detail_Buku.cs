@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UAS_A15
 {
-    public partial class DetailDonatur : Form
+    public partial class Detail_Buku : Form
     {
-        public DetailDonatur()
+        public Detail_Buku()
         {
             InitializeComponent();
         }
@@ -24,6 +24,8 @@ namespace UAS_A15
 
         private void DetailDonatur_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'uASPABDDataSet1.buku' table. You can move, or remove it, as needed.
+            this.bukuTableAdapter.Fill(this.uASPABDDataSet1.buku);
             // TODO: This line of code loads data into the 'uASPABDDataSet.donatur' table. You can move, or remove it, as needed.
             this.donaturTableAdapter.Fill(this.uASPABDDataSet.donatur);
 

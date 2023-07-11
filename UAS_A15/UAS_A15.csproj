@@ -58,11 +58,11 @@
     <Compile Include="Data_Pengarang.Designer.cs">
       <DependentUpon>Data_Pengarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailDonatur.cs">
+    <Compile Include="Detail_Buku.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetailDonatur.Designer.cs">
-      <DependentUpon>DetailDonatur.cs</DependentUpon>
+    <Compile Include="Detail_Buku.Designer.cs">
+      <DependentUpon>Detail_Buku.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -83,14 +83,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UASPABDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UASPABDDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UASPABDDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Data_Buku.resx">
       <DependentUpon>Data_Buku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Data_Pengarang.resx">
       <DependentUpon>Data_Pengarang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetailDonatur.resx">
-      <DependentUpon>DetailDonatur.cs</DependentUpon>
+    <EmbeddedResource Include="Detail_Buku.resx">
+      <DependentUpon>Detail_Buku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -126,6 +131,17 @@
     </None>
     <None Include="UASPABDDataSet.xss">
       <DependentUpon>UASPABDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UASPABDDataSet1.xsc">
+      <DependentUpon>UASPABDDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UASPABDDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UASPABDDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UASPABDDataSet1.xss">
+      <DependentUpon>UASPABDDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
