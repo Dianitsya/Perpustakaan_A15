@@ -46,23 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data_Anggota.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Data_Anggota.Designer.cs">
-      <DependentUpon>Data_Anggota.cs</DependentUpon>
-    </Compile>
     <Compile Include="Data_Buku.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Data_Buku.Designer.cs">
       <DependentUpon>Data_Buku.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data_Donatur.cs">
+    <Compile Include="Data_Pengarang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Data_Donatur.Designer.cs">
-      <DependentUpon>Data_Donatur.cs</DependentUpon>
+    <Compile Include="Data_Pengarang.Designer.cs">
+      <DependentUpon>Data_Pengarang.cs</DependentUpon>
     </Compile>
     <Compile Include="DetailDonatur.cs">
       <SubType>Form</SubType>
@@ -70,11 +64,17 @@
     <Compile Include="DetailDonatur.Designer.cs">
       <DependentUpon>DetailDonatur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,20 +83,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UASPABDDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Data_Anggota.resx">
-      <DependentUpon>Data_Anggota.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Data_Buku.resx">
       <DependentUpon>Data_Buku.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Data_Donatur.resx">
-      <DependentUpon>Data_Donatur.cs</DependentUpon>
+    <EmbeddedResource Include="Data_Pengarang.resx">
+      <DependentUpon>Data_Pengarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetailDonatur.resx">
       <DependentUpon>DetailDonatur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
