@@ -28,8 +28,6 @@ namespace UAS_A15
             connection = new SqlConnection(connectionString);
             dataGridView();
             cbJK();
-
-
         }
 
         private void cbJK()
@@ -42,20 +40,6 @@ namespace UAS_A15
             Menu menu = new Menu();
             menu.Show();
             this.Hide();
-        }
-
-
-
-        private void pictOpen_Save(object sender, EventArgs e)
-        {
-            DetailDonatur nextForm = new DetailDonatur();
-            nextForm.Show();
-            this.Hide();
-        }
-
-        private void pictSave_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -76,8 +60,8 @@ namespace UAS_A15
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string query = @"INSERT INTO pengarang (nama_pengarang, notelp_pengarang, jk_pengarang) 
-            VALUES (@nama_pengarang, @notelp_pengarang, @jk_pengarang)";
+            string query = @"INSERT INTO pengarang (nama_pengarang, notelp_pengarang, jk_pengarang) " +
+            "VALUES (@nama_pengarang, @notelp_pengarang, @jk_pengarang)";
 
             command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@nama_pengarang", txtNama.Text);
@@ -93,7 +77,31 @@ namespace UAS_A15
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+       
+
+        private void Data_Pengarang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string query = @"UPDATE pengarang SET nama_pengarang = @nama_pengarang, notelp_pengarang = @notelp_pengarang, jk_pengarang = @jk_pengarang WHERE id_pengarang = @id_pengarang";
+            command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@nama_pengarang", txtNama.Text);
+            command.Parameters.AddWithValue("@notelp_pengarang", txtNoTelp.Text);
+            command.Parameters.AddWithValue("@jk_pengarang", cbxJK.SelectedItem.ToString());
+            command.Parameters.AddWithValue("@id_pengarang", int.Parse(txtIDPeng.Text));
+
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            MessageBox.Show("Data pengarang updated successfully.");
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtIDPeng.Text);
 
@@ -108,7 +116,18 @@ namespace UAS_A15
             MessageBox.Show("Pengarang deleted successfully.");
         }
 
-        
-        
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM pengarang WHERE id_pengarang = @id_pengarang";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@id_pengarang", txtIDPeng.Text);
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGridView1.DataSource = dataTable;
+            
+        }
     }
 }

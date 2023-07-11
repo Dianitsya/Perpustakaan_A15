@@ -40,9 +40,9 @@
             this.cbxJK = new System.Windows.Forms.ComboBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRead = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -146,42 +146,44 @@
             this.dataGridView1.Size = new System.Drawing.Size(692, 150);
             this.dataGridView1.TabIndex = 17;
             // 
-            // button1
+            // btnRead
             // 
-            this.button1.Location = new System.Drawing.Point(577, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 49);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Read";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRead.Location = new System.Drawing.Point(577, 252);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(95, 49);
+            this.btnRead.TabIndex = 18;
+            this.btnRead.Text = "Read";
+            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(577, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 45);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnDelete.Location = new System.Drawing.Point(577, 359);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(95, 45);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button3
+            // btnUpdate
             // 
-            this.button3.Location = new System.Drawing.Point(577, 307);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 46);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(577, 307);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(95, 46);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Data_Pengarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnRead);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.cbxJK);
@@ -196,6 +198,7 @@
             this.Name = "Data_Pengarang";
             this.ShowIcon = false;
             this.Text = "Data_Pengarang";
+            this.Load += new System.EventHandler(this.Data_Pengarang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -216,8 +219,8 @@
         private System.Windows.Forms.ComboBox cbxJK;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRead;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

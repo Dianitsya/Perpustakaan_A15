@@ -20,31 +20,27 @@ namespace UAS_A15
 {
     public partial class Data_Buku : Form
     {
-        private string stringConnection = "Data source = TASYA\\TASYA_MASTA;Initial Catalog=perpustakaan_A15;Persist Security Info=True;User ID= sa; Password = 123";
-        private SqlConnection conn;
         private SqlConnection connection;
         private SqlCommand cmd;
-        private SqlDataAdapter adapter;
-        private DataTable dataTable;
 
         public Data_Buku()
         {
             InitializeComponent();
-            string connString = "Data source = TASYA\\TASYA_MASTA; Initial Catalog = perpustakaan_A15; Persist Security Info = True; User ID = sa; Password = 123";
-            conn = new SqlConnection(stringConnection);
+            string connectionString = "Data source = TASYA\\TASYA_MASTA; Initial Catalog = perpustakaan_A15; Persist Security Info = True; User ID = sa; Password = 123";
+            connection = new SqlConnection(connectionString);
             dataGridView();
             cbTahunTerbit();
             cbKat();
         }
         private void dataGridView()
         {
-            conn.Open();
+            connection.Open();
             string str = "select * from dbo.buku";
-            SqlDataAdapter da = new SqlDataAdapter(str, conn);
+            SqlDataAdapter da = new SqlDataAdapter(str, connection);
             DataSet ds = new DataSet();
             da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
-            conn.Close();
+            dataGridView2.DataSource = ds.Tables[0];
+            connection.Close();
         }
         
         private void label7_Click(object sender, EventArgs e)
@@ -72,56 +68,57 @@ namespace UAS_A15
 
         private void Read_Click(object sender, EventArgs e)
         {
+            string query = "SELECT * FROM buku WHERE id_buku = @id_buku";
 
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@id_buku", txtIDBuku.Text);
+
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGridView2.DataSource = dataTable;
         }
 
         private void Data_Buku_Load(object sender, EventArgs e)
         {
 
         }
-        private void LoadData()
-        {
-           
-                string query = "SELECT * FROM buku";
-                cmd = new SqlCommand(query, connection);
-                adapter = new SqlDataAdapter(cmd);
-                dataTable = new DataTable();
-
-                conn.Open();
-                adapter.Fill(dataTable);
-
-                dataGridView1.DataSource = dataTable;
-
-                conn.Close();
-           
-        }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO buku (judul_buku, id_pengarang, kategori, penerbit, tahun_terbit) " +
-                               "VALUES (@judul_buku, @id_pengarang, @kategori, @penerbit, @tahun_terbit)";
+            string query = @"INSERT INTO buku (judul_buku, id_pengarang, kategori, penerbit, tahun_terbit) " +
+            "VALUES (@judul_buku, @id_pengarang, @kategori, @penerbit, @tahun_terbit)";
             
            
-            cmd = new SqlCommand(query, conn);
+            cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@judul_buku", txtJdlBuku.Text);
             cmd.Parameters.AddWithValue("@id_pengarang", txtIDPen.Text);
             cmd.Parameters.AddWithValue("@kategori", cbxKat.SelectedItem);
             cmd.Parameters.AddWithValue("@penerbit", txtPenerbit.Text);
             cmd.Parameters.AddWithValue("@tahun_terbit", cbxTahunTerbit.SelectedItem?.ToString());
 
-            conn.Open();
+            connection.Open();
             cmd.ExecuteNonQuery();
-            conn.Close();
+            connection.Close();
 
-            MessageBox.Show("Data inserted successfully.");
-
-            LoadData();
+            MessageBox.Show("Data created successfully.");
         }
             
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            
+            int id = Convert.ToInt32(txtIDBuku.Text);
+
+            string query = "DELETE FROM buku WHERE id_buku = @id_buku";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@id_buku", id);
+
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Pengarang deleted successfully.");
 
         }
         
@@ -165,37 +162,20 @@ namespace UAS_A15
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE buku SET id_pengarang = @id_pengarang, id_donatur = @id_donatur, judul_buku = @judul_buku, kategori = @kategori, penerbit = @penerbit, tahun_terbit = @tahun_terbit WHERE id_buku = @id_buku";
+            string query = @"UPDATE buku SET judul_buku = @judul_buku, id_pengarang = @id_pengarang, kategori = @kategori, penerbit = @penerbit, tahun_terbit = @tahun_terbit WHERE id_buku = @id_buku";
+            cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@id_buku", int.Parse(txtIDBuku.Text));
+            cmd.Parameters.AddWithValue("@judul_buku", txtJdlBuku.Text);
+            cmd.Parameters.AddWithValue("@id_pengarang", txtIDPen.Text);
+            cmd.Parameters.AddWithValue("@kategori", cbxKat.Text);
+            cmd.Parameters.AddWithValue("@penerbit", txtPenerbit.Text);
+            cmd.Parameters.AddWithValue("@tahun_terbit", cbxTahunTerbit.Text);
 
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
 
-            using (SqlConnection conn = new SqlConnection(stringConnection))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@id_buku", txtIDBuku.Text);
-                    cmd.Parameters.AddWithValue("@judul_buku", txtJdlBuku.Text);
-                    cmd.Parameters.AddWithValue("@id_pengarang", txtIDPen.Text);
-                    cmd.Parameters.AddWithValue("@kategori", cbxKat.Text);
-                    cmd.Parameters.AddWithValue("@penerbit", txtPenerbit.Text);
-                    cmd.Parameters.AddWithValue("@tahun_terbit", cbxTahunTerbit.Text);
-                    cmd.ExecuteNonQuery();
-
-                    try
-                    {
-                        conn.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        MessageBox.Show("Data successfully updated.");
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("An error occurred: " + ex.Message + " (Error Code: " + ex.Number + ")");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("An error occurred: " + ex.Message);
-                    }
-                }
-            }
+            MessageBox.Show("Data pengarang updated successfully.");
         }
     }
 }
