@@ -232,10 +232,14 @@
             // cbxJK
             // 
             this.cbxJK.FormattingEnabled = true;
+            this.cbxJK.Items.AddRange(new object[] {
+            "P",
+            "L"});
             this.cbxJK.Location = new System.Drawing.Point(721, 119);
             this.cbxJK.Name = "cbxJK";
             this.cbxJK.Size = new System.Drawing.Size(213, 28);
             this.cbxJK.TabIndex = 62;
+            this.cbxJK.SelectedIndexChanged += new System.EventHandler(this.cbxJK_SelectedIndexChanged);
             // 
             // Anggota
             // 

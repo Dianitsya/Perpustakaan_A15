@@ -52,7 +52,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(699, 392);
+            this.btnDelete.Location = new System.Drawing.Point(668, 388);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(95, 45);
             this.btnDelete.TabIndex = 45;
@@ -62,7 +62,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(579, 388);
+            this.btnRead.Location = new System.Drawing.Point(548, 384);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(95, 49);
             this.btnRead.TabIndex = 44;
@@ -72,7 +72,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(462, 388);
+            this.btnCreate.Location = new System.Drawing.Point(431, 384);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(95, 50);
             this.btnCreate.TabIndex = 42;
@@ -94,21 +94,21 @@
             // 
             // txtNoTelp
             // 
-            this.txtNoTelp.Location = new System.Drawing.Point(567, 296);
+            this.txtNoTelp.Location = new System.Drawing.Point(536, 292);
             this.txtNoTelp.Name = "txtNoTelp";
             this.txtNoTelp.Size = new System.Drawing.Size(213, 26);
             this.txtNoTelp.TabIndex = 40;
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(567, 248);
+            this.txtNama.Location = new System.Drawing.Point(536, 244);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(213, 26);
             this.txtNama.TabIndex = 39;
             // 
             // txtIDDon
             // 
-            this.txtIDDon.Location = new System.Drawing.Point(567, 201);
+            this.txtIDDon.Location = new System.Drawing.Point(536, 197);
             this.txtIDDon.Name = "txtIDDon";
             this.txtIDDon.Size = new System.Drawing.Size(213, 26);
             this.txtIDDon.TabIndex = 38;
@@ -117,7 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(397, 302);
+            this.label3.Location = new System.Drawing.Point(366, 298);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 37;
@@ -127,7 +127,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(397, 254);
+            this.label2.Location = new System.Drawing.Point(366, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 20);
             this.label2.TabIndex = 36;
@@ -137,7 +137,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(397, 207);
+            this.label1.Location = new System.Drawing.Point(366, 203);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 35;
@@ -151,7 +151,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(768, 167);
+            this.dataGridView3.Size = new System.Drawing.Size(417, 167);
             this.dataGridView3.TabIndex = 47;
             // 
             // uASPABDDataSet2
@@ -174,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(769, 450);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnRead);

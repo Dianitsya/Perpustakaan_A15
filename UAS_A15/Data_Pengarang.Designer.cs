@@ -106,6 +106,9 @@
             // cbxJK
             // 
             this.cbxJK.FormattingEnabled = true;
+            this.cbxJK.Items.AddRange(new object[] {
+            "P",
+            "L"});
             this.cbxJK.Location = new System.Drawing.Point(595, 412);
             this.cbxJK.Name = "cbxJK";
             this.cbxJK.Size = new System.Drawing.Size(213, 28);

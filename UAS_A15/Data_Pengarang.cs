@@ -27,14 +27,9 @@ namespace UAS_A15
             string connectionString = "Data source = TASYA\\TASYA_MASTA; Initial Catalog = perpustakaan_A15; Persist Security Info = True; User ID = sa; Password = 123";
             connection = new SqlConnection(connectionString);
             dataGridView();
-            cbJK();
         }
 
-        private void cbJK()
-        {
-            cbxJK.Items.Add("P");
-            cbxJK.Items.Add("L");
-        }
+        
         private void pictBack_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
@@ -62,11 +57,12 @@ namespace UAS_A15
         {
             string query = @"INSERT INTO pengarang (nama_pengarang, notelp_pengarang, jk_pengarang) " +
             "VALUES (@nama_pengarang, @notelp_pengarang, @jk_pengarang)";
+            string JenisKelamin = cbxJK.Text.Trim();
 
             command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@nama_pengarang", txtNama.Text);
             command.Parameters.AddWithValue("@notelp_pengarang", txtNoTelp.Text);
-            command.Parameters.AddWithValue("@jk_pengarang", cbxJK.SelectedValue.ToString());
+            command.Parameters.AddWithValue("@jk_pengarang", JenisKelamin);
 
 
             connection.Open();
@@ -88,9 +84,11 @@ namespace UAS_A15
         {
             string query = @"UPDATE pengarang SET nama_pengarang = @nama_pengarang, notelp_pengarang = @notelp_pengarang, jk_pengarang = @jk_pengarang WHERE id_pengarang = @id_pengarang";
             command = new SqlCommand(query, connection);
+            string JenisKelamin = cbxJK.Text.Trim();
+
             command.Parameters.AddWithValue("@nama_pengarang", txtNama.Text);
             command.Parameters.AddWithValue("@notelp_pengarang", txtNoTelp.Text);
-            command.Parameters.AddWithValue("@jk_pengarang", cbxJK.SelectedValue.ToString());
+            command.Parameters.AddWithValue("@jk_pengarang", JenisKelamin);
             command.Parameters.AddWithValue("@id_pengarang", int.Parse(txtIDPeng.Text));
 
             connection.Open();

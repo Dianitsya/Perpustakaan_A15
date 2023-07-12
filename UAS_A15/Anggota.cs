@@ -24,21 +24,15 @@ namespace UAS_A15
         public Anggota()
         {
             InitializeComponent();
-            InitializeComponent();
             string connectionString = "Data source = TASYA\\TASYA_MASTA; Initial Catalog = perpustakaan_A15; Persist Security Info = True; User ID = sa; Password = 123";
             connection = new SqlConnection(connectionString);
-            dataGridView();
-            cbJK();
+            dataGridView();    
         }
-        private void cbJK()
-        {
-            cbxJK.Items.Add("P");
-            cbxJK.Items.Add("L");
-        }
+      
         private void dataGridView()
         {
             connection.Open();
-            string str = "select * from dbo.Anggota";
+            string str = "select * from dbo.anggota";
             SqlDataAdapter da = new SqlDataAdapter(str, connection);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -63,16 +57,16 @@ namespace UAS_A15
         {
             string query = @"INSERT INTO Anggota (nama_anggota, jk_anggota, notelp_anggota, alamat_anggota, tgl_pinjam, tgl_kembali) " +
             "VALUES (@nama_anggota, @jk_anggota, @notelp_anggota, @alamat_anggota, @tgl_pinjam, @tgl_kembali)";
-
+            string JenisKelamin = cbxJK.Text.Trim();
 
             cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@nama_anggota", txtNama.Text);
-            cmd.Parameters.AddWithValue("@jk_anggota", cbxJK.SelectedItem.ToString());
             cmd.Parameters.AddWithValue("@notelp_anggota", txtNoTelp.Text);
             cmd.Parameters.AddWithValue("@alamat_anggota", txtAlamat.Text);
             cmd.Parameters.AddWithValue("@tgl_pinjam", dateTimePicker1.Value);
             cmd.Parameters.AddWithValue("@tgl_kembali",dateTimePicker2.Value);
-
+            cmd.Parameters.AddWithValue("@jk_anggota", JenisKelamin);
+            
             connection.Open();
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -93,6 +87,7 @@ namespace UAS_A15
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
+            connection.Close();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -127,6 +122,11 @@ namespace UAS_A15
             command.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Data Anggota deleted successfully.");
+        }
+
+        private void cbxJK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
