@@ -34,8 +34,8 @@ namespace UAS_A15
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
+            Form1 form1 = new Form1();
+            form1.Show();
             this.Hide();
         }
 

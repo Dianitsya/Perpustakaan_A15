@@ -66,7 +66,7 @@ namespace UAS_A15
             command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@nama_pengarang", txtNama.Text);
             command.Parameters.AddWithValue("@notelp_pengarang", txtNoTelp.Text);
-            command.Parameters.AddWithValue("@jk_pengarang", cbxJK.SelectedItem.ToString());
+            command.Parameters.AddWithValue("@jk_pengarang", cbxJK.SelectedValue.ToString());
 
 
             connection.Open();
@@ -90,7 +90,7 @@ namespace UAS_A15
             command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@nama_pengarang", txtNama.Text);
             command.Parameters.AddWithValue("@notelp_pengarang", txtNoTelp.Text);
-            command.Parameters.AddWithValue("@jk_pengarang", cbxJK.SelectedItem.ToString());
+            command.Parameters.AddWithValue("@jk_pengarang", cbxJK.SelectedValue.ToString());
             command.Parameters.AddWithValue("@id_pengarang", int.Parse(txtIDPeng.Text));
 
             connection.Open();
@@ -128,6 +128,11 @@ namespace UAS_A15
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
             
+        }
+
+        private void cbxJK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

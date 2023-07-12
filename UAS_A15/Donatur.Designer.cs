@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Donatur));
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnCreate = new System.Windows.Forms.Button();
             this.pictBack = new System.Windows.Forms.PictureBox();
             this.txtNoTelp = new System.Windows.Forms.TextBox();
@@ -41,57 +40,51 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBack)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(567, 438);
+            this.btnUpdate.Location = new System.Drawing.Point(662, 438);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(95, 46);
             this.btnUpdate.TabIndex = 34;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(699, 438);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 45);
-            this.btnDelete.TabIndex = 33;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(440, 438);
+            this.btnRead.Location = new System.Drawing.Point(542, 438);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(95, 49);
             this.btnRead.TabIndex = 32;
             this.btnRead.Text = "Read";
             this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
-            // dataGridView1
+            // dataGridView2
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(723, 173);
-            this.dataGridView1.TabIndex = 31;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView2.Location = new System.Drawing.Point(34, 12);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(723, 173);
+            this.dataGridView2.TabIndex = 31;
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(317, 438);
+            this.btnCreate.Location = new System.Drawing.Point(415, 436);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(95, 50);
             this.btnCreate.TabIndex = 30;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // pictBack
             // 
@@ -164,9 +157,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 503);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnRead);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.pictBack);
             this.Controls.Add(this.txtNoTelp);
@@ -177,7 +169,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Donatur";
             this.Text = "Donatur";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Donatur_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,9 +180,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRead;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.PictureBox pictBack;
         private System.Windows.Forms.TextBox txtNoTelp;

@@ -118,7 +118,7 @@ namespace UAS_A15
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
-            MessageBox.Show("Pengarang deleted successfully.");
+            MessageBox.Show("Data Buku deleted successfully.");
 
         }
         
@@ -175,7 +175,7 @@ namespace UAS_A15
             cmd.ExecuteNonQuery();
             connection.Close();
 
-            MessageBox.Show("Data pengarang updated successfully.");
+            MessageBox.Show("Data Buku updated successfully.");
         }
     }
 }

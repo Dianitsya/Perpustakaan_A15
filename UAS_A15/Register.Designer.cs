@@ -55,6 +55,7 @@
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(129, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(494, 197);
@@ -95,7 +96,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(56, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Password";
             // 
@@ -104,7 +105,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(56, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Username";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -151,6 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 383);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnBack);

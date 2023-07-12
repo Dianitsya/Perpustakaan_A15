@@ -110,6 +110,7 @@
             this.cbxJK.Name = "cbxJK";
             this.cbxJK.Size = new System.Drawing.Size(213, 28);
             this.cbxJK.TabIndex = 15;
+            this.cbxJK.SelectedIndexChanged += new System.EventHandler(this.cbxJK_SelectedIndexChanged);
             // 
             // btnCreate
             // 
