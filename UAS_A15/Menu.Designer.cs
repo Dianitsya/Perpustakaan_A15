@@ -35,6 +35,11 @@
             this.pctDonatur = new System.Windows.Forms.PictureBox();
             this.pctPetugas = new System.Windows.Forms.PictureBox();
             this.pctAnggota = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictBuku)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictPengarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctDonatur)).BeginInit();
@@ -91,9 +96,10 @@
             // 
             this.pctPetugas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctPetugas.BackgroundImage")));
             this.pctPetugas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctPetugas.Location = new System.Drawing.Point(691, 168);
+            this.pctPetugas.Location = new System.Drawing.Point(691, 167);
             this.pctPetugas.Name = "pctPetugas";
-            this.pctPetugas.Size = new System.Drawing.Size(139, 111);
+            this.pctPetugas.Size = new System.Drawing.Size(139, 112);
+            this.pctPetugas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctPetugas.TabIndex = 13;
             this.pctPetugas.TabStop = false;
             this.pctPetugas.Click += new System.EventHandler(this.pctPetugas_Click);
@@ -110,6 +116,61 @@
             this.pctAnggota.TabStop = false;
             this.pctAnggota.Click += new System.EventHandler(this.pctAnggota_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Menu;
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(68, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 21);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Pengarang";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Menu;
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(286, 282);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 21);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Buku";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Menu;
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(487, 282);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 21);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Donatur";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Menu;
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(734, 282);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 21);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Petugas";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Menu;
+            this.label6.Font = new System.Drawing.Font("Modern No. 20", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(944, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 21);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Anggota";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -118,6 +179,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1061, 453);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pctAnggota);
             this.Controls.Add(this.pctPetugas);
             this.Controls.Add(this.pctDonatur);
@@ -145,5 +211,10 @@
         private System.Windows.Forms.PictureBox pctDonatur;
         private System.Windows.Forms.PictureBox pctPetugas;
         private System.Windows.Forms.PictureBox pctAnggota;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
