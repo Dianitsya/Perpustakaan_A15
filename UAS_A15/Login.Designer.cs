@@ -36,13 +36,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblRegister = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSubmit.Location = new System.Drawing.Point(153, 361);
+            this.btnSubmit.Location = new System.Drawing.Point(243, 362);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(112, 49);
             this.btnSubmit.TabIndex = 14;
@@ -65,6 +67,7 @@
             this.txtboxUser.Name = "txtboxUser";
             this.txtboxUser.Size = new System.Drawing.Size(149, 26);
             this.txtboxUser.TabIndex = 12;
+            this.txtboxUser.TextChanged += new System.EventHandler(this.txtboxUser_TextChanged);
             // 
             // label3
             // 
@@ -106,12 +109,35 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 336);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Belum Punya Akun?";
+            // 
+            // lblRegister
+            // 
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.Location = new System.Drawing.Point(140, 336);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(69, 20);
+            this.lblRegister.TabIndex = 16;
+            this.lblRegister.Text = "Register";
+            this.lblRegister.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(445, 513);
+            this.Controls.Add(this.lblRegister);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtboxPass);
             this.Controls.Add(this.txtboxUser);
@@ -139,6 +165,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRegister;
     }
 }
 

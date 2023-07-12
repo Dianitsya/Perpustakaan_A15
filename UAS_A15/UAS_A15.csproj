@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anggota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anggota.Designer.cs">
+      <DependentUpon>Anggota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data_Buku.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,11 +64,23 @@
     <Compile Include="Data_Pengarang.Designer.cs">
       <DependentUpon>Data_Pengarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Detail_Buku.cs">
+    <Compile Include="Donatur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Detail_Buku.Designer.cs">
-      <DependentUpon>Detail_Buku.cs</DependentUpon>
+    <Compile Include="Donatur.Designer.cs">
+      <DependentUpon>Donatur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Petugas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Petugas.Designer.cs">
+      <DependentUpon>Petugas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -88,14 +106,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UASPABDDataSet1.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Anggota.resx">
+      <DependentUpon>Anggota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Data_Buku.resx">
       <DependentUpon>Data_Buku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Data_Pengarang.resx">
       <DependentUpon>Data_Pengarang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Detail_Buku.resx">
-      <DependentUpon>Detail_Buku.cs</DependentUpon>
+    <EmbeddedResource Include="Donatur.resx">
+      <DependentUpon>Donatur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Petugas.resx">
+      <DependentUpon>Petugas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

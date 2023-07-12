@@ -29,11 +29,34 @@ namespace UAS_A15
             this.Hide();
         }
 
-        private void pictDonatur_Click_1(object sender, EventArgs e)
+        private void pctDonatur_Click(object sender, EventArgs e)
+        {
+            Donatur nextForm = new Donatur();
+            nextForm.Show();
+            this.Hide();
+        }
+
+        private void pictPengarang_Click_1(object sender, EventArgs e)
         {
             Data_Pengarang nextForm = new Data_Pengarang();
             nextForm.Show();
             this.Hide();
+        }
+
+        private void pctAnggota_Click(object sender, EventArgs e)
+        {
+            Anggota nextForm = new Anggota();
+            nextForm.Show();
+            this.Hide();
+
+        }
+
+        private void pctPetugas_Click(object sender, EventArgs e)
+        {
+            Petugas nextForm = new Petugas();
+            nextForm.Show();
+            this.Hide();
+
         }
     }
 }
